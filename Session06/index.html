@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hệ thống quản lý sinh viên</h1>
+            <p>Quản lý thông tin sinh viên một cách hiệu quả</p>
+        </div>
+
+      
+
+        <div class="content">
+            <div class="form-section">
+                <h2>Thêm sinh viên mới</h2>
+                
+                <div class="form-group">
+                    <label for="student-id">Mã sinh viên</label>
+                    <input type="number" id="student-id" placeholder="Nhập mã sinh viên">
+                </div>
+
+                <div class="form-group">
+                    <label for="student-name">Họ và tên</label>
+                    <input type="text" id="student-name" placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label for="student-dob">Ngày sinh</label>
+                    <input type="date" id="student-dob">
+                </div>
+
+                <div class="form-group">
+                    <label for="student-gender">Giới tính</label>
+                    <select id="student-gender">
+                        <option value="">Chọn giới tính</option>
+                        <option value="true">Nam</option>
+                        <option value="false">Nữ</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-address">Địa chỉ</label>
+                    <input type="text" id="student-address" placeholder="Nhập địa chỉ">
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <button class="btn">Thêm sinh viên</button>
+                    <button class="btn btn-secondary">Làm mới</button>
+                </div>
+            </div>
+
+            <div class="student-list">
+                <h2>Danh sách sinh viên</h2>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="🔍 Tìm kiếm sinh viên..." id="search">
+                </div>
+
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>Mã SV</th>
+                            <th>Họ và tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Giới tính</th>
+                            <th>Địa chỉ</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body">
+                        <tr>
+                            <td><span class="student-id">20231001</span></td>
+                            <td>Nguyễn Văn An</td>
+                            <td>15/03/2005</td>
+                            <td><span class="gender-badge gender-male">Nam</span></td>
+                            <td>123 Lê Lợi, Q1, TP.HCM</td>
+                            <td class="actions">
+                                <button class="btn btn-sm btn-edit">Sửa</button>
+                                <button class="btn btn-sm btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="student-id">20231002</span></td>
+                            <td>Trần Thị Bình</td>
+                            <td>22/07/2005</td>
+                            <td><span class="gender-badge gender-female">Nữ</span></td>
+                            <td>456 Nguyễn Huệ, Q1, TP.HCM</td>
+                            <td class="actions">
+                                <button class="btn btn-sm btn-edit">Sửa</button>
+                                <button class="btn btn-sm btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="student-id">20231003</span></td>
+                            <td>Lê Minh Cường</td>
+                            <td>10/11/2004</td>
+                            <td><span class="gender-badge gender-male">Nam</span></td>
+                            <td>789 Hai Bà Trưng, Q3, TP.HCM</td>
+                            <td class="actions">
+                                <button class="btn btn-sm btn-edit">Sửa</button>
+                                <button class="btn btn-sm btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="student-id">20231004</span></td>
+                            <td>Phạm Thị Diễm</td>
+                            <td>05/09/2005</td>
+                            <td><span class="gender-badge gender-female">Nữ</span></td>
+                            <td>321 Võ Thị Sáu, Q3, TP.HCM</td>
+                            <td class="actions">
+                                <button class="btn btn-sm btn-edit">Sửa</button>
+                                <button class="btn btn-sm btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="student-id">20231005</span></td>
+                            <td>Hoàng Văn Em</td>
+                            <td>18/12/2004</td>
+                            <td><span class="gender-badge gender-male">Nam</span></td>
+                            <td>654 Pasteur, Q1, TP.HCM</td>
+                            <td class="actions">
+                                <button class="btn btn-sm btn-edit">Sửa</button>
+                                <button class="btn btn-sm btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="dist/main.js" type="module"></script>
+</body>
+</html>
