@@ -1,3 +1,5 @@
+import { GenericCrud } from "./struct.js";
+
 export type Student ={
     id : number;
     name : string;
@@ -63,3 +65,55 @@ export const data: Student[] =  [
     sex: false,
     address: "258 Lý Tự Trọng, Quận 1, TP.HCM"
   }];
+
+
+  export class StudentManager implements GenericCrud<Student,number>{
+    private students: Student[] = [...data];
+
+    getAll(): Student[] {
+        return this.students;
+    }
+    getById(id: number): Student | undefined {
+        return this.students.find(stu => stu.id === id);
+    }
+    create(item: Student): void {
+        this.students.push(item);
+    }
+    update(id: number, item: Student): void {
+        this.students = this.students.map(stu => stu.id === id ? ({ ...stu, ...item }) : stu);
+    }
+    delete(id: number): void {
+        this.students = this.students.filter(stu => stu.id !== id);
+    }
+  }
+
+
+  interface Comment{
+    id: string;
+    userId: number;
+    content: string;
+  }
+
+  class CommentManager implements GenericCrud<Comment, string>{
+    private comments: Comment[] = [];
+
+    getAll(): Comment[] {
+        return this.comments;
+    }
+    getById(id: string): Comment | undefined {
+        return this.comments.find(cmt => cmt.id === id);
+    }
+    create(item: Comment): void {
+        this.comments.push(item);
+    }
+    update(id: string, item: Comment): void {
+        this.comments = this.comments.map(cmt => cmt.id === id ? ({ ...cmt, ...item }) : cmt);
+    }
+    delete(id: string): void {
+        this.comments = this.comments.filter(cmt => cmt.id !== id);
+    }
+  }
+
+
+  // Component<T, U, V> 
+  // tiêu chuẩn thiết kế : SOLID 
